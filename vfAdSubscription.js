@@ -3,7 +3,7 @@ function generateContentRecirculationAd(slotId) {
   const networkNAd = document.createElement("div");
   networkNAd.setAttribute("id", "nn_viafoura_mpu1");
   vfAdContainer.appendChild(networkNAd);
-  console.log("1. generateContentRecirculationAd");
+  console.log("3. generateContentRecirculationAd");
   loadNetworkN();
 };
 
@@ -20,5 +20,5 @@ window.vfQ = window.vfQ || [];
 window.vfQ.push(function () {
   window.vf.$subscribe("vf-ads", "requestContentRecirculationAd", generateContentRecirculationAd);
   window.vf.$subscribe("vf-ads", "requestStandaloneAd", generateStandaloneAd);
-  console.log("3. Events subscribed");
+  console.log("1. Events subscribed");
 });
