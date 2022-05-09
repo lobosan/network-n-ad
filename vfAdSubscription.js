@@ -4,7 +4,6 @@ function generateContentRecirculationAd(slotId) {
   networkNAd.setAttribute("id", "nn_viafoura_mpu1");
   vfAdContainer.appendChild(networkNAd);
   console.log("3. generateContentRecirculationAd");
-  loadNetworkN();
 };
 
 function generateStandaloneAd(slotId) {
@@ -13,6 +12,7 @@ function generateStandaloneAd(slotId) {
   networkNAd.setAttribute("id", "nn_viafoura_mpu2");
   vfAdContainer.appendChild(networkNAd);
   console.log("2. generateStandaloneAd");
+  loadNetworkN();
 };
 
 // Subscribe to the viafoura event when the viafoura object is ready
