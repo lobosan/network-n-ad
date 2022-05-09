@@ -7,5 +7,3 @@ function loadNetworkN() {
   console.log("4. loadNetworkN");
   debugger;
 }
-
-loadNetworkN();

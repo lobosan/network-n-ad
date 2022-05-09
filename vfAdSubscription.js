@@ -5,6 +5,7 @@ function generateContentRecirculationAd(slotId) {
   vfAdContainer.appendChild(networkNAd);
   // document.findElementById(slotId).style = "display: block";
   console.log("1. generateContentRecirculationAd");
+  loadNetworkN();
   debugger;
 };
 
