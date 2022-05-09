@@ -3,10 +3,8 @@ function generateContentRecirculationAd(slotId) {
   const networkNAd = document.createElement("div");
   networkNAd.setAttribute("id", "nn_viafoura_mpu1");
   vfAdContainer.appendChild(networkNAd);
-  // document.findElementById(slotId).style = "display: block";
   console.log("1. generateContentRecirculationAd");
   loadNetworkN();
-  debugger;
 };
 
 function generateStandaloneAd(slotId) {
@@ -14,9 +12,7 @@ function generateStandaloneAd(slotId) {
   const networkNAd = document.createElement("div");
   networkNAd.setAttribute("id", "nn_viafoura_mpu2");
   vfAdContainer.appendChild(networkNAd);
-  // document.findElementById(slotId).style = "display: block";
   console.log("2. generateStandaloneAd");
-  debugger;
 };
 
 // Subscribe to the viafoura event when the viafoura object is ready
@@ -25,5 +21,4 @@ window.vfQ.push(function () {
   window.vf.$subscribe("vf-ads", "requestContentRecirculationAd", generateContentRecirculationAd);
   window.vf.$subscribe("vf-ads", "requestStandaloneAd", generateStandaloneAd);
   console.log("3. Events subscribed");
-  debugger;
 });
