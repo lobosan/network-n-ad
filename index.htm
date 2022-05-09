@@ -12,12 +12,53 @@
     <!-- Place the below code anywhere you like in the <head> (higher is better) -->
     <script>window.AdSlots = window.AdSlots || {cmd: [], disableScripts: ['gpt']};</script>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-    <script async src="https://kumo.network-n.com/dist/app.js" site="tech-raptor"></script>
   </head>
   <body>
-    Above Comments Left / Mobile:
-    <div id="nn_viafoura_mpu1"></div>
-    Above Comments Right:
-    <div id="nn_viafoura_mpu2"></div>
+    <div class="viafoura">
+      <vf-content-recirculation limit="5" days-published="7" trend-window="1" sort="comments" vf-container-id="unique-article_content-27831" />
+    </div>
+
+    <div class="viafoura">
+      <vf-standalone-ad></vf-standalone-ad>
+    </div>
+
+    <script async src="https://cdn.viafoura.net/vf-v2.js"></script>
+
+    <script async>
+      function generateContentRecirculationAd(slotId) {
+        const vfAdContainer = document.getElementById(slotId);
+        const networkNAd = document.createElement("div");
+        networkNAd.setAttribute("id", "nn_viafoura_mpu1");
+        vfAdContainer.appendChild(networkNAd);
+        document.findElementById(slotId).style = "display: block";
+      };
+
+      function generateStandaloneAd(slotId) {
+        const vfAdContainer = document.getElementById(slotId);
+        const networkNAd = document.createElement("div");
+        networkNAd.setAttribute("id", "nn_viafoura_mpu2");
+        vfAdContainer.appendChild(networkNAd);
+        document.findElementById(slotId).style = "display: block";
+      };
+
+      // Subscribe to the viafoura event when the viafoura object is ready
+      window.vfQ = window.vfQ || [];
+      window.vfQ.push(function () {
+        window.vf.$subscribe("vf-ads", "requestContentRecirculationAd", generateContentRecirculationAd);
+        window.vf.$subscribe("vf-ads", "requestStandaloneAd", generateStandaloneAd);
+      });
+    </script>
+
+    <script async>
+      function loadNetworkN() {
+        const networkN = document.createElement("script");
+        networkN.setAttribute("async", true);
+        networkN.setAttribute("src", "https://kumo.network-n.com/dist/app.js");
+        networkN.setAttribute("site", "tech-raptor");
+        document.head.appendChild(networkN);
+      }
+      loadNetworkN();
+    </script>
+
   </body>
 </html>
