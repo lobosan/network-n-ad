@@ -3,7 +3,7 @@ function generateContentRecirculationAd(slotId) {
   const networkNAd = document.createElement("div");
   networkNAd.setAttribute("id", "nn_viafoura_mpu1");
   vfAdContainer.appendChild(networkNAd);
-  document.findElementById(slotId).style = "display: block";
+  // document.findElementById(slotId).style = "display: block";
   console.log("1. generateContentRecirculationAd");
   debugger;
 };
@@ -13,7 +13,7 @@ function generateStandaloneAd(slotId) {
   const networkNAd = document.createElement("div");
   networkNAd.setAttribute("id", "nn_viafoura_mpu2");
   vfAdContainer.appendChild(networkNAd);
-  document.findElementById(slotId).style = "display: block";
+  // document.findElementById(slotId).style = "display: block";
   console.log("2. generateStandaloneAd");
   debugger;
 };
