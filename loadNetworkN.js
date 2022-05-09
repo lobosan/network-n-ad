@@ -5,6 +5,7 @@ function loadNetworkN() {
   networkN.setAttribute("site", "tech-raptor");
   document.head.appendChild(networkN);
   console.log("4. loadNetworkN");
+  debugger;
 }
 
 loadNetworkN();
