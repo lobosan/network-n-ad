@@ -23,7 +23,7 @@ function generateStandaloneAd(slotId) {
     const vfAdContainer = document.getElementById(slotId);
     console.log(slotId);
     const networkNAd = document.createElement("div");
-    networkNAd.setAttribute("id", "nn_viafoura_mpu3");
+    networkNAd.setAttribute("id", "nn_lb1");
     vfAdContainer.appendChild(networkNAd);
     console.log("2.1 generateStandaloneAd");
   }
