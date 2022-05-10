@@ -9,6 +9,7 @@ function generateContentRecirculationAd(slotId) {
 
 function generateStandaloneAd(slotId) {
   const vfAdContainer = document.getElementById(slotId);
+  debugger;
   const networkNAd = document.createElement("div");
   networkNAd.setAttribute("id", "nn_viafoura_mpu2");
   vfAdContainer.appendChild(networkNAd);
