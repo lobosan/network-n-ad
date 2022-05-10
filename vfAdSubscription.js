@@ -1,3 +1,5 @@
+var counter = 0;
+
 function generateContentRecirculationAd(slotId) {
   const vfAdContainer = document.getElementById(slotId);
   const networkNAd = document.createElement("div");
@@ -8,13 +10,23 @@ function generateContentRecirculationAd(slotId) {
 };
 
 function generateStandaloneAd(slotId) {
-  const vfAdContainer = document.getElementById(slotId);
-  console.log(slotId);
-  debugger;
-  const networkNAd = document.createElement("div");
-  networkNAd.setAttribute("id", "nn_viafoura_mpu2");
-  vfAdContainer.appendChild(networkNAd);
-  console.log("2. generateStandaloneAd");
+  counter++;
+  if (counter === 1) {
+    const vfAdContainer = document.getElementById(slotId);
+    console.log(slotId);
+    const networkNAd = document.createElement("div");
+    networkNAd.setAttribute("id", "nn_viafoura_mpu2");
+    vfAdContainer.appendChild(networkNAd);
+    console.log("2. generateStandaloneAd");
+  }
+  if (counter === 2) {
+    const vfAdContainer = document.getElementById(slotId);
+    console.log(slotId);
+    const networkNAd = document.createElement("div");
+    networkNAd.setAttribute("id", "nn_viafoura_mpu3");
+    vfAdContainer.appendChild(networkNAd);
+    console.log("2.1 generateStandaloneAd");
+  }
 };
 
 // Subscribe to the viafoura event when the viafoura object is ready
