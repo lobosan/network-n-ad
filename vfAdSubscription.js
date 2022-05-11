@@ -1,10 +1,10 @@
 let counter = 0;
 
 function generateStandaloneAd(slotId) {
-  let networkNDivId = "nn_viafoura_mpu2";
-  if (counter === 1) networkNDivId = "nn_lb1";
   const vfAdContainer = document.getElementById(slotId);
   const networkNAd = document.createElement("div");
+  let networkNDivId = "nn_viafoura_mpu2";
+  if (counter === 1) networkNDivId = "nn_lb1";
   networkNAd.setAttribute("id", networkNDivId);
   vfAdContainer.appendChild(networkNAd);
   counter++;
