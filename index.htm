@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The next line is only used for testing purposes so it needs to be removed in production -->
     <meta name="vf:domain" content="dev-d9.raptorian.com" />
 
     <title>Network N</title>
@@ -32,8 +33,16 @@
     <script async src="https://cdn.viafoura.net/vf-v2.js"></script>
 
     <script>
-      let counter = 0;
+      // Subscribe to the viafoura event when the viafoura object is ready
+      window.vfQ = window.vfQ || [];
+      window.vfQ.push(function () {
+        window.vf.$subscribe("vf-ads", "requestContentRecirculationAd", generateContentRecirculationAd);
+        window.vf.$subscribe("vf-ads", "requestStandaloneAd", generateStandaloneAd);
+        console.log("1. Events subscribed");
+      });
 
+      // This counter is used to render 2 standalone ad units with different div ids (left/right)
+      let counter = 0;
       function generateStandaloneAd(slotId) {
         const vfAdContainer = document.getElementById(slotId);
         const networkNAd = document.createElement("div");
@@ -51,6 +60,7 @@
         networkNAd.setAttribute("id", "nn_viafoura_mpu1");
         vfAdContainer.appendChild(networkNAd);
         console.log("3. generateContentRecirculationAd");
+        // NetworkN script is loaded dinamically and after the divs with ids have been added to the Viafoura ad slots
         loadNetworkN();
       };
 
@@ -62,14 +72,6 @@
         document.head.appendChild(networkN);
         console.log("4. loadNetworkN");
       }
-
-      // Subscribe to the viafoura event when the viafoura object is ready
-      window.vfQ = window.vfQ || [];
-      window.vfQ.push(function () {
-        window.vf.$subscribe("vf-ads", "requestContentRecirculationAd", generateContentRecirculationAd);
-        window.vf.$subscribe("vf-ads", "requestStandaloneAd", generateStandaloneAd);
-        console.log("1. Events subscribed");
-      });
     </script>
 
     </body>
