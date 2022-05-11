@@ -1,23 +1,14 @@
-var counter = 0;
+let counter = 0;
 
 function generateStandaloneAd(slotId) {
+  let networkNDivId = "nn_viafoura_mpu2";
+  if (counter === 1) networkNDivId = "nn_lb1";
+  const vfAdContainer = document.getElementById(slotId);
+  const networkNAd = document.createElement("div");
+  networkNAd.setAttribute("id", networkNDivId);
+  vfAdContainer.appendChild(networkNAd);
   counter++;
-  if (counter === 1) {
-    const vfAdContainer = document.getElementById(slotId);
-    console.log(slotId);
-    const networkNAd = document.createElement("div");
-    networkNAd.setAttribute("id", "nn_viafoura_mpu2");
-    vfAdContainer.appendChild(networkNAd);
-    console.log("2. generateStandaloneAd");
-  }
-  if (counter === 2) {
-    const vfAdContainer = document.getElementById(slotId);
-    console.log(slotId);
-    const networkNAd = document.createElement("div");
-    networkNAd.setAttribute("id", "nn_lb1");
-    vfAdContainer.appendChild(networkNAd);
-    console.log("2.1 generateStandaloneAd");
-  }
+  console.log("2. generateStandaloneAd - ", slotId);
 };
 
 function generateContentRecirculationAd(slotId) {
